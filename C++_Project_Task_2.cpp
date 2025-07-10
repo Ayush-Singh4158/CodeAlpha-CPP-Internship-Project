@@ -44,7 +44,7 @@ void registerUser() {
     cin >> username;
 
     if (userExists(username)) {
-        cout << "❌ Username already exists. Try a different one.\n";
+        cout << " Username already exists. Try a different one.\n";
         return;
     }
 
@@ -57,9 +57,9 @@ void registerUser() {
     if (userFile) {
         userFile << hashPassword(password);
         userFile.close();
-        cout << "✅ Registration successful for '" << username << "'!\n";
+        cout << " Registration successful for '" << username << "'!\n";
     } else {
-        cout << "⚠️ Error creating user file. Try again.\n";
+        cout << " Error creating user file. Try again.\n";
     }
 }
 
@@ -70,7 +70,7 @@ void loginUser() {
     cin >> username;
 
     if (!userExists(username)) {
-        cout << "❌ No account found for this username.\n";
+        cout << " No account found for this username.\n";
         return;
     }
 
@@ -83,9 +83,9 @@ void loginUser() {
     userFile.close();
 
     if (storedHash == hashPassword(password)) {
-        cout << "✅ Login successful! Welcome, " << username << ".\n";
+        cout << " Login successful! Welcome, " << username << ".\n";
     } else {
-        cout << "❌ Incorrect password.\n";
+        cout << " Incorrect password.\n";
     }
 }
 
@@ -104,7 +104,7 @@ int main() {
             loginUser();
             break;
         default:
-            cout << "⚠️ Invalid option selected.\n";
+            cout << " Invalid option selected.\n";
     }
 
     return 0;
